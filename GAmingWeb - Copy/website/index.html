@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaming Website</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family:Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        font-size: 24px;
+        /* color: #fff; */
+      }
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 100px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      section h2 {
+        font-size: 32px;
+      }
+
+      
+
+      h1:hover,
+      h2:hover,
+      h3:hover {
+        color: #122cf4; /* Change text color on hover */
+        text-decoration: underline; /* Underline text on hover */
+      }
+
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+      .profile-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        /* object-fit: cover; */
+        /* box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); */
+        background-color: #fff;
+      }
+      /* .description:hover{
+        color: rgb(238, 80, 40);
+      } */
+      
+      .profile{
+        /* padding-top: 3px; */
+        color: #fff;
+      }
+      .background-color {
+        background-image: url("{{url_for('static',filename='images/homeimage.jpg')}}");
+        background-size: cover;
+        background-position:center; 
+        background-repeat: no-repeat; 
+        background-attachment:scroll; 
+        
+        /* background: radial-gradient(
+            at 35% 50%,
+            hsla(160, 85%, 65%, 1) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 75% 55%,
+            hsla(260, 70%, 55%, 1) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 50% 20%,
+            hsla(20, 90%, 70%, 1) 0px,
+            transparent 50%
+          ); */
+      }
+    
+    </style>
+  </head>
+  <body>
+  
+    <header style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+      <!-- <div class="container"> -->
+      <h1>GameZone</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="/games">Games</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="/admin">Admin</a></li>
+        </ul>
+      </nav>
+      <a href="/profile" class="profile">
+        <img
+          src="{{url_for('static',filename='images/account.png' )}}"
+          alt="Profile"
+          class="profile-icon"
+        /></a>
+      <!-- </div> -->
+    </header>
+    <div class="background-color">
+      <section id="home">
+        <div class="container">
+          <h2>Welcome to Our Gaming Website</h2>
+          <p>Welcome to GameZone! We are thrilled to have you here. GameZone is a website created by a group of enthusiastic gamers who are passionate about everything related to gaming. Our journey started in 2022 when we decided to turn our love for games into a platform where we could share our thoughts, experiences, and knowledge with fellow gamers around the world.</p>
+          <p>Explore the world of gaming with us.</p>
+          <p>Our mission is simple: to create a welcoming and inclusive community where gamers of all levels can come together to share their love for games. We aim to provide valuable content, foster engaging discussions, and offer a space where everyone feels comfortable expressing their opinions and learning from one another.</p>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <h2>About Us</h2>
+          <p>
+            We are passionate about gaming and aim to provide the best gaming
+            experience to our users.
+          </p>
+          <p>
+            GameZone started as a modest blog run by a few friends who wanted to share their gaming adventures. From those humble beginnings, we have expanded our scope and improved our content, driven by our commitment to deliver valuable and engaging material. We understand the challenges that come with being beginners, and our goal is to create a welcoming environment where everyone, regardless of skill level, can find something useful and enjoyable.
+          </p>
+          <p>
+            We believe that gaming is more than just a hobby; it is a way to connect with people, explore new worlds, and experience exciting stories. At GameZone, we are committed to fostering a community that values respect, inclusivity, and positive engagement. We encourage open discussions and believe that every gamer’s voice matters. Our content is crafted with care, aiming to be both honest and helpful, reflecting our genuine passion for gaming.
+          </p>
+          <ul>
+            <li><strong>Passion:</strong> We love games and strive to share that love through our content.</li>
+            <li><strong>Inclusivity:</strong> We welcome gamers of all backgrounds and skill levels.</li>
+            <li><strong>Integrity:</strong> We are committed to providing honest, unbiased content.</li>
+            <li><strong>Community:</strong> We believe in the power of community and strive to foster a supportive environment.</li>
+          </ul>
+        
+        </div>
+      </section>
+
+      
+
+      <section id="contact">
+        <div class="container">
+          <h2>Contact Us</h2>
+          <p>We value your feedback and are always open to suggestions. We’re excited to hear from you and appreciate your support as we continue to grow and improve GameZone.</p>
+          <a href="/feedback"><p>Feed Back</p></a>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Gaming Website. All rights reserved.</p>
+      </div>
+    </footer>
+  
+  </body>
+</html>
