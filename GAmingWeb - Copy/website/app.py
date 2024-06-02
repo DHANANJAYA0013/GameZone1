@@ -7,15 +7,15 @@ import pytz
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'your_secret_key_here'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:/Users/Dhananjaya/OneDrive/Desktop/GAmingWeb/website/instance/User.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///instance/User.db'
 app.config['SQLALCHEMY_BINDS'] = {
-    'gamesession1': 'sqlite:///C:/Users/Dhananjaya/OneDrive/Desktop/GAmingWeb/website/instance/GameSession1.db',
-    'gamesession2': 'sqlite:///C:/Users/Dhananjaya/OneDrive/Desktop/GAmingWeb/website/instance/GameSession2.db',
-    'gamesession3': 'sqlite:///C:/Users/Dhananjaya/OneDrive/Desktop/GAmingWeb/website/instance/GameSession3.db',
-    'gamesession4': 'sqlite:///C:/Users/Dhananjaya/OneDrive/Desktop/GAmingWeb/website/instance/GameSession4.db',
-    'gamesession5': 'sqlite:///C:/Users/Dhananjaya/OneDrive/Desktop/GAmingWeb/website/instance/GameSession5.db',
-    'gamesession6': 'sqlite:///C:/Users/Dhananjaya/OneDrive/Desktop/GAmingWeb/website/instance/GameSession6.db',
-    'Feedback': 'sqlite:///C:/Users/Dhananjaya/OneDrive/Desktop/GAmingWeb/website/instance/Feedback.db'
+    'gamesession1': 'sqlite:///instance/GameSession1.db',
+    'gamesession2': 'sqlite:///instance/GameSession2.db',
+    'gamesession3': 'sqlite:///instance/GameSession3.db',
+    'gamesession4': 'sqlite:///instance/GameSession4.db',
+    'gamesession5': 'sqlite:///instance/GameSession5.db',
+    'gamesession6': 'sqlite:///instance/GameSession6.db',
+    'Feedback': 'sqlite:///instance/Feedback.db'
 }
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
