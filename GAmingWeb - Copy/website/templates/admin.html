@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        nav {
+            width: 100%;
+            background: #333;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            text-transform: uppercase;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        @media (max-width: 768px) {
+            table, th, td {
+                display: block;
+                width: 100%;
+            }
+            th, td {
+                padding: 10px;
+                text-align: right;
+            }
+            th {
+                text-align: left;
+            }
+            tr {
+                margin-bottom: 10px;
+                border-bottom: 2px solid #ddd;
+            }
+            tbody tr td:before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        <a href="/index">Home</a>
+        <a href="/">Logout</a>
+    </nav>
+    <div class="container">
+        <h2>User Details</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Contact Number</th>
+                    <th>Date and Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td data-label="ID">{{ user.id }}</td>
+                    <td data-label="Username">{{ user.username }}</td>
+                    <td data-label="Email">{{ user.email }}</td>
+                    <td data-label="Password">{{ user.password }}</td>
+                    <td data-label="contact-number">{{ user.contact_number }}</td>
+                    <td data-label="Date">{{ user.date.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h1>Game Login Details</h1>
+        <div class="container">
+            <h1 class="mt-5">Puzzle </h1>
+            <table class="table table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Login Time</th>
+                        <th>Total Time Spent (seconds)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for session in game_sessions1 %}
+                    <tr>
+                        <td>{{ session.id }}</td>
+                        <td>{{ session.username }}</td>
+                        <td>{{ session.login_time | formatdatetime('%Y-%m-%d %H:%M:%S')  }}</td>
+                        <td>{{ session.total_time_spent }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <h1 class="mt-5">Word Search </h1>
+            <table class="table table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Login Time</th>
+                        <th>Total Time Spent (seconds)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for session in game_sessions2 %}
+                    <tr>
+                        <td>{{ session.id }}</td>
+                        <td>{{ session.username }}</td>
+                        <td>{{ session.login_time | formatdatetime('%Y-%m-%d %H:%M:%S')  }}</td>
+                        <td>{{ session.total_time_spent }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <h1 class="mt-5">Tic Tac Toe </h1>
+            <table class="table table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Login Time</th>
+                        <th>Total Time Spent (seconds)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for session in game_sessions3 %}
+                    <tr>
+                        <td>{{ session.id }}</td>
+                        <td>{{ session.username }}</td>
+                        <td>{{ session.login_time | formatdatetime('%Y-%m-%d %H:%M:%S')  }}</td>
+                        <td>{{ session.total_time_spent }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <h1 class="mt-5">2048</h1>
+            <table class="table table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Login Time</th>
+                        <th>Total Time Spent (seconds)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for session in game_sessions4 %}
+                    <tr>
+                        <td>{{ session.id }}</td>
+                        <td>{{ session.username }}</td>
+                        <td>{{ session.login_time | formatdatetime('%Y-%m-%d %H:%M:%S')  }}</td>
+                        <td>{{ session.total_time_spent }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <h1 class="mt-5">Tetris</h1>
+            <table class="table table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Login Time</th>
+                        <th>Total Time Spent (seconds)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for session in game_sessions5 %}
+                    <tr>
+                        <td>{{ session.id }}</td>
+                        <td>{{ session.username }}</td>
+                        <td>{{ session.login_time | formatdatetime('%Y-%m-%d %H:%M:%S')  }}</td>
+                        <td>{{ session.total_time_spent }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <h1 class="mt-5">Sudoku</h1>
+            <table class="table table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Login Time</th>
+                        <th>Total Time Spent (seconds)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for session in game_sessions6 %}
+                    <tr>
+                        <td>{{ session.id }}</td>
+                        <td>{{ session.username }}</td>
+                        <td>{{ session.login_time | formatdatetime('%Y-%m-%d %H:%M:%S')  }}</td>
+                        <td>{{ session.total_time_spent }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <h2>FeedBack Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Time</th>
+                        <th>Feed back</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in feedback %}
+                    <tr>
+                        <td data-label="ID">{{ user.id }}</td>
+                        <td data-label="Username">{{ user.username }}</td>
+                        <td data-label="Email">{{ user.email }}</td>
+                        <td data-label="Date">{{ user.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                        <td data-label="Feedback">{{ user.feedback }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

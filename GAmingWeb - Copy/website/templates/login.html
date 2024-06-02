@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css' )}}">
+    <script src="{{ url_for('static', filename='particles.js') }}"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="form-wrapper sign-in">
+        <form method="POST" action="{{ url_for('login_post') }}">
+            <h2>Login</h2>
+            <div class="input-group">
+                <input type="email" id="email" name="email" required>
+                <label for="email">Email:</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="password" required>
+                <label for="password">Password:</label>
+            </div>
+            <div class="remember">
+                <label for="">
+                    <input type="checkbox">Remember me
+                </label>
+            </div>
+            <button type="submit">LOGIN</button>
+            <div class="signUp-link">
+                <p><br>Don't have an account? <a href="/signup" class="signUpBtn-link">Sign up</a></p>
+            </div>
+        </form>
+    </div>   
+</div> 
+<div id="particles-js"> </div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

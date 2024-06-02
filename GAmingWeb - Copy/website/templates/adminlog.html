@@ -1,0 +1,198 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+</head>
+<body>
+    <h1>Welcome to the Admin Page</h1>
+    <form action="{{ url_for('admin_login') }}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html> -->
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" class="ui" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.4/semantic.min.css?v=|VERSION|">
+    <!-- <link href="images/style.css" rel="stylesheet" /> -->
+    <style>
+       
+body {
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #666F75;
+    background: #2A363F;
+}
+.ui.grid {
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: RGBA(110, 217, 160, .7);
+	font-weight: bold;
+}
+
+.pusher {
+	padding-top: 20%;
+}
+
+.container {
+	min-width: 320px;
+}
+	
+.ui.centered.grid .ui.centered.grid .column:last-child {
+	border-left: 1px solid #3D4750;
+}
+
+.ui.centered.grid h1 {
+	text-align: center;
+	color: #FFF;
+	font-size: 48px;
+	line-height: 2.5em;
+	font-weight: normal;
+	font-family: Raleway;
+	text-decoration: none;
+}
+.ui.grid+.grid {
+	text-align: right;
+}
+.ui.form {
+	margin-left: 5%;
+}
+.ui.form .field {
+	margin-bottom: 1.2em;
+}
+.ui.form .field:nth-of-type(2) {
+	margin-bottom: 2em;
+}
+.ui.form .field>label {
+	display: none;
+}
+.ui.form .field .button {
+	color: #FFF;
+	background: #6ED9A0;
+}
+
+.ui.form input[type=text],
+.ui.form input[type=password] {
+	display: inline-block;
+	vertical-align: top;
+	color: #626262;
+	background: transparent;
+	border: 1px solid #666F75;
+	border-radius: 4px;
+	box-shadow: none;
+	width: 100%;
+	box-sizing: border-box;
+}
+.ui.form input[type=text]:hover,
+.ui.form input[type=password]:hover {
+	border-color: #6BD39C;
+	background: transparent;
+}
+.ui.form input[type=text]:focus,
+.ui.form input[type=password]:focus {
+	color: #FFF;
+	background: transparent;
+	border-color: #6BD39C;
+	border-radius: 4px;
+	outline: none;
+	box-shadow: none;
+}
+.footer {
+	color: #2A363F;
+	content: ' ';
+	clear: both;
+	text-align: center;
+}
+.footer a {
+	color: #2A363F;
+}
+@media (max-width: 1200px) {
+	.ui.centered.grid h1 {
+		font-size: 40px;
+		line-height: 1.8em;
+	}
+}
+@media (max-width: 1300px) {
+	.ui.centered.grid h1 {
+		margin: 0;
+		line-height: 1.8em;
+	}
+}
+@media (max-width: 930px) {
+	.pusher {
+	    padding-top: 10%;
+	}
+	.ui.centered.grid h1 {
+		margin: 0 0 10px;
+	}
+
+	.ui.centered.grid .ui.centered.grid .column:last-child {
+		border-left: 0 none;
+	}
+	.ui.form {
+		margin-left: 0;
+	}
+	.ui[class*="two column"].grid>.column {
+		width: 96%;
+	}
+	.sixteen.column>.column {
+		padding: 1rem;
+	}
+}
+    </style>
+</head>
+
+<body>
+	<div class="pusher">
+		<div class="container">
+		<div class="ui two column centered grid login-form">
+			<div class="column">
+				
+				<div class="ui two column centered grid">
+					<div class="column">
+						<h1><i class="world icon" style="color:#6ED9A0;"></i> Admin </h1>
+					</div>
+					<div class="column">
+						
+						<form method="post" action="{{ url_for('admin_login') }}" name="loginForm" id="loginForm">
+						
+							<div class="ui large form">
+						
+								<div class="field">
+									<label for="username">Username:</label>
+									<input type="text" id="username" name="username" placeholder="Username">
+								</div>
+					
+								<div class="field">
+									<label for="password">Password: </label>
+									<input type="password" id="password" name="password" placeholder="Password">
+								</div>
+								
+								<div class="field">
+									<button type="submit" class="large fluid ui button">Login</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>
+		
+		</div>
+	</div>
+</body>
+</html>

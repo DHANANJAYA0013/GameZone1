@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+        }
+        .gameImage {
+            width: 200px;
+            height: 210px;
+            margin-left: 20px;
+        }
+        .game {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+            padding-top: 10px;
+        }
+        .game .description {
+            flex: 1;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 100px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        section {
+            padding: 50px 0;
+            color: #fff;
+        }
+        h2:hover,h3:hover{
+            text-decoration:underline;
+        }
+        img{
+            border: 5px solid black;
+        }
+        section{
+            background-image: url("{{url_for('static',filename='images/fg1.jpg')}}");
+        }
+    </style>
+</head>
+<body>
+    <header style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        <h1>GameZone</h1>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="#games">Games</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="games">
+        <div class="container">
+            <h2>Featured Games</h2>
+            <div class="game">
+                <div class="description">
+                    <h3>Puzzle</h3>
+                    <p><strong>Test your logical skills as you arrange numbers to clear the board with simple yet challenging gameplay.</strong></p>
+                </div>
+                <a href="/puzzle">
+                    <img src="{{url_for('static',filename='images/puzzle.png')}}" class="gameImage" />
+                </a>
+            </div>
+            <div class="game">
+                <div class="description">
+                    <h3>Word Search</h3>
+                    <p><strong>Test your vocabulary skills as you find hidden words in a grid of letters. Simple yet challenging gameplay provides fun for all ages, enhancing your pattern recognition and spelling abilities.</strong></p>
+                </div>
+                <a href="/word">
+                    <img src="{{url_for('static',filename='images/word.jpg')}}" class="gameImage" />
+                </a>
+            </div>
+            <div class="game">
+                <div class="description">
+                    <h3>Tic Tac Toe</h3>
+                    <p><strong>Challenge your strategic thinking in Tic Tac Toe as you aim to align three X's or O's in a row. Simple yet engaging gameplay offers fun for all ages, enhancing your planning and decision-making skills.</strong></p>
+                </div>
+                <a href="/tictak">
+                    <img src="{{url_for('static',filename='images/tictaktoe.png')}}" class="gameImage" />
+                </a>
+            </div>
+            <div class="game">
+                <div class="description">
+                    <h3>2048</h3>
+                    <p><strong>Test your strategic thinking in 2048 as you slide tiles on a grid to combine them and create the 2048 tile. Simple yet addictive gameplay provides a challenge for all ages, enhancing your problem-solving and planning skills.</strong></p>
+                </div>
+                <a href="/2048">
+                    <img src="{{url_for('static',filename='images/2048.jpg')}}" class="gameImage" />
+                </a>
+            </div>
+            <div class="game">
+                <div class="description">
+                    <h3>Tetris</h3>
+                    <p><strong>Challenge your spatial awareness in Tetris as you arrange falling blocks to clear lines. Simple yet addictive gameplay offers fun for all ages, enhancing your pattern recognition and quick-thinking skills.</strong></p>
+                </div>
+                <a href="/tetris">
+                    <img src="{{url_for('static',filename='images/tetris.png')}}" class="gameImage" />
+                </a>
+            </div>
+            <div class="game">
+                <div class="description">
+                    <h3>Sudoku</h3>
+                    <p><strong>Sharpen your logic skills with Sudoku by filling a 9x9 grid with numbers so each row, column, and 3x3 section contain all digits from 1 to 9. Simple yet challenging, this game provides mental stimulation for all ages.</strong></p>
+                </div>
+                <a href="/sudoku">
+                    <img src="{{url_for('static',filename='images/sudoku.jpg')}}" class="gameImage" />
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

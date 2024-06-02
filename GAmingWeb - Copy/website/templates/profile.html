@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/profile.css' )}}">
+</head>
+<body>
+   <div class="container">
+    <div class="main">
+        <div class="topbar">
+            
+            <!-- <div class="col-md-4 mt-1">
+                <div class="card text-center slidebar">
+                    <div class="card-body">
+                        <img src="avatar.png" class="rounded-circle" width="150">
+    
+                    </div>
+                </div>
+            </div> -->
+            <a href="/logout">logout</a>
+            <a href="">Support</a>
+            <a href="">work</a>
+            <a href="/index">Home</a>
+            <img src="{{url_for('static',filename='images/avatar.png' )}}" class="rounded-circle" width="150">
+        </div>
+        <div class="row">
+            
+            <div class="col-md-8 mt-1">
+                <div class="card mb-3 content">
+                    <h1 class="m-3pt-3">About</h1>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4>Full name</h4>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                               <p>{{ username}}</p>
+                            </div>
+
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4>Email</h4>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                <p>{{ users.email }}</p>
+                            </div>
+
+                        </div>
+                        <hr>
+                        <!-- <div class="row">
+                            <div class="col-md-3">
+                                <h4>Phone</h4>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                001234567890
+                            </div>
+
+                        </div> -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4>Login Time</h4>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                <p>{{users.last_login.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+   </div> 
+</body>
+</html>
